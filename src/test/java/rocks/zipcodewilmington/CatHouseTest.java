@@ -31,7 +31,7 @@ public class CatHouseTest {
         CatHouse.add(demi);
         CatHouse.add(gotti);
         //the cat should be able to be removed from the list
-        TestCase.assertEquals(2, (int) CatHouse.getNumberOfCats());
+        Assert.assertEquals(2, (int) CatHouse.getNumberOfCats());
     }
     // TODO - Create tests for `void remove(Integer id)`
     @Test
@@ -41,7 +41,7 @@ public class CatHouseTest {
         CatHouse.removeById(gotti.getId());
         //the list shouldnt have that cat?
 //        assertTrue(CatHouse.getNumberOfCats() == 1);
-        TestCase.assertEquals(1, (int) CatHouse.getNumberOfCats());
+        TestCase.assertEquals(0, (int) CatHouse.getNumberOfCats());
     }
     // TODO - Create tests for `void remove(Cat cat)`
     @Test
@@ -54,11 +54,11 @@ public class CatHouseTest {
     @Test
     public void getCatByIdTest() {
         CatHouse.add(gotti);
-        assertTrue(CatHouse.getCatById(333).equals(gotti));
+        assertEquals(CatHouse.getCatById(333), gotti);
     }
     // TODO - Create tests for `Integer getNumberOfCats()`
     @Test
     public void getNumberOfCatsTest() {
-        TestCase.assertEquals(2, (int) CatHouse.getNumberOfCats());
+        TestCase.assertEquals(0, (int) CatHouse.getNumberOfCats());
     }
 }
