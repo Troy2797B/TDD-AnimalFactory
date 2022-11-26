@@ -2,6 +2,7 @@ package rocks.zipcodewilmington;
 
 
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.animal_creation.AnimalFactory;
 import rocks.zipcodewilmington.animals.animal_storage.DogHouse;
@@ -22,9 +23,17 @@ public class AnimalFactoryTest {
     public void createDogTest(){
         //given when then
         Date date = new Date(2001, Calendar.JUNE, 8);
-        assertNotNull(AnimalFactory.createDog("Spot", date));
-        //this method makes a dog with a name, birthdate and ID
+        Dog pup = AnimalFactory.createDog("Spot", date);
+        assertTrue(pup.getName().equals("Spot")
+                && pup.getBirthDate().equals(date));
     }
     //TODO - Create Test for `Animal createCat(String name, Date birthDate)`
-//    @Test
+    @Test
+    public void createCatTest(){
+        //given when then
+        Date date = new Date(2009, Calendar.MARCH, 30);
+        Cat cat = AnimalFactory.createCat("Spot", date);
+        assertTrue(cat.getName().equals("Spot")
+                && cat.getBirthDate().equals(date));
+    }
 }
